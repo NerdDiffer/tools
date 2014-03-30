@@ -28,14 +28,14 @@ function checkHighLow (num1, num2) {
 // returns a range low to high if num1 < num2
 // returns a range high to low if num1 > num2
 // returns range with 1 number if num1 == num2
-function makeRange (num1, num2) {
+function makeRange_old (num1, num2) {
 	var max = checkHighLow(num1, num2);
 	var min = num1 != max ? num1 : num2;
 	return (num2 == max) ? range(num1, num2) : range(num2, num1).reverse();
 }
 
 // make a range of numbers
-function makeRange2 (num1, num2) {
+function makeRange (num1, num2) {
 	function range (num1, num2) {
 		var newRange = [];
 		var i = num2;
@@ -61,6 +61,10 @@ function makeRange2 (num1, num2) {
 	var min = num1 != max ? num1 : num2;
 	return (num2 == max) ? range(num1, num2) : range(num2, num1).reverse();
 }
+console.log(makeRange_old(1, 9));
+console.log(makeRange_old(9, 1));
+console.log(makeRange_old(9, 9));
+console.log("***");
 console.log(makeRange(1, 9));
 console.log(makeRange(9, 1));
 console.log(makeRange(9, 9));

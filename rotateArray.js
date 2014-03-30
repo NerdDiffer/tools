@@ -1,8 +1,12 @@
-// @param direction, 
-//   (-1) are we moving last element to become the first element? or 
-//   (0) are we moving first element so it becomes the last element?
+// @param direction: 
+//   (-1) if we are moving the last element to become the first element 
+//   (0)  if we are moving the first element to become the last element
 var rotate = function(arr, direction) {
+  if (direction != 0 && direction != -1) {
+    direction = -1;
+  }
   direction == 0 ? arr.push(arr.shift(arr[0])) : arr.unshift(arr.pop(arr[0]));
+  return arr;
 };
 var myArr = ['a','b','c','d','e','f','g','h','i','j'];
 var arr = ['a', 'b', 'c'];
