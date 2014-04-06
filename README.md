@@ -1,5 +1,5 @@
 tools
 =====
 
-small collection of utility functions in javascript
-inspired by http://www.eloquentjavascript.net/ and conversations with various people
+small collection of utility functions in javascript <br />
+inspired by http://www.eloquentjavascript.net/, conversations with various people
