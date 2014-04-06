@@ -92,6 +92,15 @@ var reduceEach = function(combine, base, array) {
   return base;
 };
 
+var filterEach = function(booleanTest, array) {
+	var result = [];
+	each(array, function(element) {
+		if (booleanTest(element)) {
+			result.push(element);
+		}
+	})
+	return result;	
+}
 // callbacks
 var add = function(a, b) {
 	return a + b;
@@ -104,8 +113,3 @@ var multiply = function(a, b) {
 function isBigEnough (element) {
 	return element >= 5;
 }
-var obj = {a: '1st element', b: '2nd element'};
-var a = [];
-var d = new Date();
-console.log(Object.prototype.toString.call(d));
-console.log(typeof d);
