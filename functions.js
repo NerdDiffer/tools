@@ -100,7 +100,16 @@ var filterEach = function(booleanTest, array) {
 		}
 	})
 	return result;	
-}
+};
+
+var makeArrOfObjValues = function(obj, prop) {
+	var  arr = [];
+	each(obj, function(element) {
+		arr.push(element[prop]);
+	});
+	return arr;
+};
+
 // callbacks
 var add = function(a, b) {
 	return a + b;
