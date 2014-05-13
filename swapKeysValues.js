@@ -1,21 +1,38 @@
-function swapKeysValues(arr) {
-	var hash = {};
-	//arr.forEach(function(value, index, array) {
-	//	hash[value] = index;
-	//});
-	for (var key in arr) {
-		
-	}
-	return hash;
-}
-var swapKeysAndValues = function(obj) {
+var swapKeysAndValues_veryVerbose = function(obj) {
 	var keys = Object.keys(obj);
-	var vals = obj[key];
+	//console.log(keys);
+	var vals = [];
 	for (var key in obj) {
-		key = key;
+		vals.push(obj[key])
+		//console.log(vals);
 	}
-	return obj;
+	var newObj = {};
+	vals.forEach(function(val, ind, arr) {
+		newObj[val] = keys[ind];
+	})
+	return newObj;
+}
+var swap_verbose = function(paramObj) {
+	// create new blank object called 'swapped'
+	// traverse paramObj while building the new object
+	// extract values. save as newProperty to swapped object
+	// extract keys. save as newValue of the newProperty to swapped object
+	var swapped = {};
+	for (var prop in paramObj) {
+		var newProp = paramObj[prop];
+		var newVal = prop;
+		swapped[newProp] = newVal;
+	}
+	return swapped;
+}
+var swap_concise = function(paramObj) {
+	var swapped = {};
+	for (var prop in paramObj) {
+		swapped[paramObj[prop]] = prop;
+	}
+	return swapped;
 }
 var myObj = {a: 'one', b: 'two', c: 'three'};
-//console.log(swapKeysAndValues(myObj));
-console.log(swapKeysValues(myObj));
+//console.log(swapKeysAndValues_veryVerbose(myObj));
+//console.log(swap_verbose(myObj));
+//console.log(swap_concise(myObj));
