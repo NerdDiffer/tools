@@ -9,20 +9,13 @@ var rotateSelf = function(arr, direction) {
   direction == 0 ? arr.push(arr.shift(arr[0])) : arr.unshift(arr.pop(arr[0]));
   return arr;
 };
-var myArr = ['a','b','c','d','e','f','g','h','i','j'];
-var arr = ['a', 'b', 'c'];
-console.log(arr);
-rotateSelf(arr, 0);
-console.log(arr);
-rotateSelf(arr, -1);
-console.log(arr);
 
 // returns new copy of an array. modifies it a set number of times
 // @param times: number of times to move each letter. default set to 1 time.
 // @param direction: 
 //   (-1) if we are moving the last element to become the first element 
 //   (0)  if we are moving the first element to become the last element
-var rotate = function(arr, direction, times) {
+var rotateCopy = function(arr, direction, times) {
   if (direction != 0 && direction != -1) {
     direction = -1;
   }
@@ -35,3 +28,6 @@ var rotate = function(arr, direction, times) {
   }
   return rotated;
 };
+
+exports.rotateSelf = rotateSelf;
+exports.rotateCopy = rotateCopy;
