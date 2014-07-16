@@ -96,11 +96,6 @@ var makeArrOfObjValues = function(obj, prop) {
 	return arr;
 };
 
-// checks array length. true if both arrays have same length. false otherwise
-var checkArrLength = function(arr1, arr2) {
-  return arr1.length == arr2.length;
-};
-
 /* blend 2 arrays into 1 object. 
   values of header become keys of returned object. values of row become values of returned object.
   lengths of each of the array parameters must be the same

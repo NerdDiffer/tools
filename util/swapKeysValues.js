@@ -1,15 +1,13 @@
 var swapKeysAndValues_veryVerbose = function(obj) {
 	var keys = Object.keys(obj);
-	//console.log(keys);
 	var vals = [];
 	for (var key in obj) {
 		vals.push(obj[key])
-		//console.log(vals);
 	}
 	var newObj = {};
 	vals.forEach(function(val, ind, arr) {
 		newObj[val] = keys[ind];
-	})
+	});
 	return newObj;
 }
 var swap_verbose = function(paramObj) {
@@ -22,17 +20,16 @@ var swap_verbose = function(paramObj) {
 		var newProp = paramObj[prop];
 		var newVal = prop;
 		swapped[newProp] = newVal;
-	}
+	};
 	return swapped;
 }
 var swap_concise = function(paramObj) {
 	var swapped = {};
-	for (var prop in paramObj) {
+	for (var prop in paramObj)
 		swapped[paramObj[prop]] = prop;
-	}
 	return swapped;
 }
-var myObj = {a: 'one', b: 'two', c: 'three'};
-//console.log(swapKeysAndValues_veryVerbose(myObj));
-//console.log(swap_verbose(myObj));
-//console.log(swap_concise(myObj));
+
+//exports.swap_veryVerbose = swapKeysAndValues_veryVerbose;
+//exports.swap_verbose = swap_verbose;
+exports.swap = swap_concise;

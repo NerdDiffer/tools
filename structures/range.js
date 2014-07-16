@@ -61,10 +61,5 @@ function makeRange (num1, num2) {
 	var min = num1 != max ? num1 : num2;
 	return (num2 == max) ? range(num1, num2) : range(num2, num1).reverse();
 }
-console.log(makeRange_old(1, 9));
-console.log(makeRange_old(9, 1));
-console.log(makeRange_old(9, 9));
-console.log("***");
-console.log(makeRange(1, 9));
-console.log(makeRange(9, 1));
-console.log(makeRange(9, 9));
+
+exports.makeRange = makeRange;
