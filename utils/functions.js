@@ -1,6 +1,5 @@
 var forEach = function(array, action) {
-	for (var i = 0; i < array.length; i++)
-		action(array[i]);
+	for (var i = 0; i < array.length; i++) action(array[i]);
 };
 
 var map = function(action, array) {
@@ -24,7 +23,7 @@ var filter = function(booleanTest, array) {
 		if (booleanTest(element)) {
 			result.push(element);
 		}
-	})
+	});
 	return result;
 };
 
@@ -63,9 +62,9 @@ var p = function(arrayOrObject) {
 // returns collected values as a one-dimensional array
 function collectValues(arrOfObj, prop) {
   return arrOfObj.map(function(obj) {
-		if (obj.hasOwnProperty(prop)) return obj[prop]
-		else return ('property ' + prop + ' is not present'):
-  })
+		if (obj.hasOwnProperty(prop)) return obj[prop];
+		else return ('property ' + prop + ' is not present');
+  });
 }
 
 // takes a two-dimensional array, converts to a one-dimensional array
@@ -78,17 +77,4 @@ function getAverageOf(array, prop) {
   return (array.reduce(function(average, prop) {
     return average + parseFloat(prop);
   }, 0) / array.length).toFixed(2);
-}
-
-// callbacks
-var add = function(a, b) {
-	return a + b;
-};
-
-var multiply = function(a, b) {
-	return a * b;
-};
-
-function isBigEnough (element) {
-	return element >= 5;
 }

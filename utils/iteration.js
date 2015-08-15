@@ -1,12 +1,17 @@
-var each = function(arrayOrObject, iterator) {
+var each = function(arrayOrObject, fn) {
+  var i;
 	if (Array.isArray(arrayOrObject)) {
-		for (var i = 0; i < arrayOrObject.length; i++) 
-			iterator(arrayOrObject[i], i, arrayOrObject);
+		for (i = 0; i < arrayOrObject.length; i++) {
+			fn(arrayOrObject[i], i, arrayOrObject);
+    }
 	} else if (arrayOrObject !== null && typeof arrayOrObject === "object") {
-		for (var i in arrayOrObject) 
-			iterator(arrayOrObject[i], i, arrayOrObject);
+		for (i in arrayOrObject) {
+			fn(arrayOrObject[i], i, arrayOrObject);
+    }
 	} else {
-    throw new Error('you must pass in an array or an object as the first parameter');
+    throw new Error (
+      'you must pass in an array or an object as the first parameter'
+    );
 	}
 };
 
@@ -24,24 +29,26 @@ var each = function(arrayOrObject, iterator) {
 //	}
 //};
 
-var mapEach = function(iterator, arrayOrObject) {
+var map = function(iterator, arrayOrObject) {
 	var result;
 	if (Array.isArray(arrayOrObject)) {
 		result = [];
 		each(arrayOrObject, function(value, index, array) {
-			return result[index] = iterator(value, index, array);
-		})
+			//return result[index] = iterator(value, index, array);
+			return iterator(value, index, array);
+		});
 	} else if (arrayOrObject !== null && typeof arrayOrObject === "object") {
 		result = {};
 		each(arrayOrObject, function(val, key, obj) {
-			return result[key] = iterator(val, key, obj);
-		})
+			//return result[key] = iterator(val, key, obj);
+			return iterator(val, key, obj);
+		});
 	}	
 	return result;
 };
 
 // not as strong b/c it only works with arrays
-//var mapEach2 = function(action, array) {
+//var map2 = function(action, array) {
 //	var result = [];
 //	each(array, function(element) {
 //		result.push(action(element));
@@ -49,20 +56,20 @@ var mapEach = function(iterator, arrayOrObject) {
 //	return result;
 //};
 
-var reduceEach = function(combine, base, array) {
+var reduce = function(combine, base, array) {
 	each(array, function (element) {
     base = combine(base, element);
   });
   return base;
 };
 
-var filterEach = function(booleanTest, array) {
+var filter = function(booleanTest, array) {
 	var result = [];
 	each(array, function(element) {
 		if (booleanTest(element)) {
 			result.push(element);
 		}
-	})
+	});
 	return result;	
 };
 
@@ -70,9 +77,10 @@ var filterEach = function(booleanTest, array) {
 // keys of new object are the array values in the order they appear in array. value of each key is undefined
 var makeObjFrom = function(arr) {
 	var obj = {};
-	mapEach(function(val) {
-		return obj[val]	= undefined;
-	}, arr)
+	map(function(val) {
+		//return obj[val]	= undefined;
+		return undefined;
+	}, arr);
 	return obj;
 };
 
@@ -81,8 +89,8 @@ var makeObjFrom = function(arr) {
 var makeArrFrom = function(obj) {
 	var arr = [];
 	each(obj, function(val) {
-		arr.push(val)
-	})
+		arr.push(val);
+	});
 	return arr;
 };
 

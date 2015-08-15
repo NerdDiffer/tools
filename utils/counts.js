@@ -1,7 +1,7 @@
 // counts # of instances of a value in array 
 function countObj(arr){
 	var counts = {};
-	arr.sort(function(a,b) { return a - b });
+	arr.sort(function(a,b) { return a - b; });
 	arr.map(function(val){
 	  counts[val] = 0;
 	});

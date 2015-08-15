@@ -1,7 +1,7 @@
 // http://en.wikipedia.org/wiki/Insertion_sort
 
-arrNum = [12, 14, 1, 24, 300, 9]
-arrStr = ["zebra", "cat", "apple", "moose", "yellow fin tuna"]
+arrNum = [12, 14, 1, 24, 300, 9];
+arrStr = ["zebra", "cat", "apple", "moose", "yellow fin tuna"];
 var insertionSort = function(array) {
 	for (var i = 1; i < array.length; i++) { // outer loop
 		var j = i;
@@ -13,8 +13,8 @@ var insertionSort = function(array) {
 			j--;
 		}
 	}
-	return array
-}
+	return array;
+};
 //console.log(insertionSort(arrNum));
 //console.log(insertionSort(arrStr));
 
@@ -29,12 +29,12 @@ var insertionSort2 = function(array) {
 			j--;
 	  }
 	}
-)};
+);};
 
 arrNum.forEach(function(val, ind, arr) {
 	val = parseInt(val);
 //	console.log(val);
-})
+});
 console.log(arrNum.sort(a-b));
 
 console.log(insertionSort2(arrNum));

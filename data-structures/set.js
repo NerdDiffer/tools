@@ -14,13 +14,13 @@ myObj = {
 	'num1': 43,
 	'num2': 597,
 	'num3': 5662682
-}
+};
 //or even this:
 myObj = {
 	'num1': num1,
 	'num2': num2,
 	'num3': num3
-}
+};
 // I've tried doing this, but obviously, does not reference the variable. it stores a string instead, which is not what I want.
 function makeObj () {
 	var obj = {};

@@ -1,14 +1,14 @@
 // make a range of numbers
 function range (min, max) {
-	var range = [];
+	var r = [];
 	var i = max;
 	var j = 0;
 	while (i >= min) {
-		range[j] = i;
+		r[j] = i;
 		j++;
 		i--;
 	}
-	return range.reverse();
+	return r.reverse();
 }
 /* the above function returns a range from high to low.
    make a function that returns a range from low to high.

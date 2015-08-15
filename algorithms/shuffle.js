@@ -14,4 +14,4 @@ var Fisher_Yates = function(arr) {
 		shuffled.push(newEntry);
 	}
 	return shuffled;
-}
+};

@@ -82,14 +82,14 @@ function getMinOfArray(numArray) {
 // @param rangeArray, the range to iterate through
 // @param fn, the callback, containing the condition you are testing between adjacent array elements
 function iterateFrom1 (rangeArray, fn) {
-	var sortedRange = copyArr(rangeArray).sort(function(a,b) { return a -b } );
+	var sortedRange = copyArr(rangeArray).sort(function(a,b) { return a -b; } );
   var i = 1;
   while (i < sortedRange.length) {
 		if (!fn(sortedRange, i)) return false;
   	i++;
-  };
+  }
   return true;
-};
+}
 
 // callbacks for iterateFrom1. should evaluate to false when you want the loop to break.
 //function isDifferentFromPrevious(arr, a) { return arr[a] != arr[a-1] };
